@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Button from "@components/button/Button";
-import HintText from "@components/hintText/HintText1";
+import Button from "@components/common/button/Button";
+import HintText from "@components/common/hintText/HintText1";
 import TeamButton from "@components/create/TeamButton";
 
 const Container = styled.div`
