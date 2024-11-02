@@ -7,6 +7,7 @@ interface InputWrapProps {
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 10px;
 `;
 
 export const InputTitleWrapper = styled.div`
