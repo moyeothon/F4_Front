@@ -30,7 +30,7 @@ const Btn = styled.button`
 interface ButtonProps {
   link: string;
   name: string;
-  type: string;
+  type?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ link, name, type }) => {

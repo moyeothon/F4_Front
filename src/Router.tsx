@@ -2,6 +2,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/login/Login";
 import Create from "@pages/create/Create";
+import Test from "@pages/test/Test";
+import Invite from "@pages/invite/Invite";
 
 const Router: React.FC = () => {
   return (
@@ -9,6 +11,8 @@ const Router: React.FC = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/create" element={<Create />} />
+        <Route path="test/:page" element={<Test />} />
+        <Route path="/invite" element={<Invite />} />
       </Routes>
     </BrowserRouter>
   );
