@@ -36,7 +36,7 @@ const Login: React.FC = () => {
           paragraph="팀을 참가할 때 간단한 정보를 입력받아요."
         />
         <InputForm>
-          <Input label="이름" essential hint="" />
+          <Input label="이름" hint="" />
           <DateInput />
         </InputForm>
       </Container>

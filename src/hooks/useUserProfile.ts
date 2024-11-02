@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AxiosResponse } from "axios";
-import { client } from "@apis/instance";
+import { instance } from "@apis/instance";
 
 export const useUserProfile = () => {
   const [response, setResponse] = useState<AxiosResponse | null>(null);
@@ -9,7 +9,7 @@ export const useUserProfile = () => {
   const fetchData = async () => {
     try {
       // TODO - team_id 저장, profile id 저장
-      const response = await client.get(
+      const response = await instance.get(
         "https://test.site/api/teams/{team_id}/profiles/{profile_id}"
       );
       setResponse(response);
