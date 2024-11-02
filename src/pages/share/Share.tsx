@@ -2,29 +2,26 @@ import * as S from "./style";
 import { Container } from "@components/common/container/style";
 import { Wrapper } from "@components/common/wrapper/style";
 import ActivatedProfile from "@components/invite/profile/ActivatedProfile";
-import { InputContainer } from "@components/common/inputContainer/InputContainer";
-import Button from "@components/common/button/Button";
+import useDownloadScreenshot from "@hooks/useDownloadScreenShot";
 
 const Share = () => {
+  useDownloadScreenshot("root", "/create");
   return (
     <Container>
       <S.Title>Sync Up 결과</S.Title>
       <Wrapper>
-        <InputContainer label="팀명" defaultText="F4!" isDisabled={true} />
-        <InputContainer
-          label="우리팀만의 규칙"
-          defaultText="입력된 규칙 1
-입력된 규칙 2
-          "
-          isTextArea={true}
-          isDisabled={true}
-          //   $background="#E1F0DA"
-        />
-        <InputContainer
-          label="우리팀의 목표"
-          defaultText="입력된 값"
-          isDisabled={true}
-        />
+        <S.InputWrapper>
+          <S.InputLabel>팀명</S.InputLabel>
+          <S.Input>입력값</S.Input>
+        </S.InputWrapper>
+        <S.InputWrapper>
+          <S.InputLabel>우리팀 규칙</S.InputLabel>
+          <S.Input>입력값</S.Input>
+        </S.InputWrapper>
+        <S.InputWrapper>
+          <S.InputLabel>우리팀 목표</S.InputLabel>
+          <S.Input>입력값</S.Input>
+        </S.InputWrapper>
       </Wrapper>
       <S.ProfileContainer>
         <S.Label>우리 팀 정보</S.Label>
@@ -58,11 +55,6 @@ const Share = () => {
           $borderColor="#E1F0DA"
         />
       </S.ProfileContainer>
-      <Button
-        $width="100%"
-        name="공유하기"
-        onClick={() => console.log("출력")}
-      ></Button>
     </Container>
   );
 };

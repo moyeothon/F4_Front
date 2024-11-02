@@ -23,6 +23,7 @@ export const Img = styled.img`
   width: 54px;
   height: 54px;
   border-radius: 27px;
+  z-index: 999;
 `;
 
 export const DefaultImg = styled.div`
