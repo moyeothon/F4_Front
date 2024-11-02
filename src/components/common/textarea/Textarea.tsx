@@ -1,13 +1,22 @@
+// Textarea.tsx
+import React from "react";
 import styled from "styled-components";
 
-export default function Textarea() {
+interface TextareaProps {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+}
+
+const Textarea: React.FC<TextareaProps> = ({ value, onChange }) => {
   return (
     <Container>
       <Title>개발 언어 / 스택</Title>
-      <TextArea />
+      <TextArea value={value} onChange={onChange} />
     </Container>
   );
-}
+};
+
+export default Textarea;
 
 const Container = styled.div`
   display: flex;

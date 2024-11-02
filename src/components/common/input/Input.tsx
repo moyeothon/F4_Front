@@ -6,9 +6,17 @@ interface InputProps {
   label: string;
   essential: boolean;
   hint: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input: React.FC<InputProps> = ({ label, essential = true, hint }) => {
+const Input: React.FC<InputProps> = ({
+  label,
+  essential = true,
+  hint,
+  value,
+  onChange,
+}) => {
   return (
     <S.InputContainer>
       <S.InputTitleWrapper>
@@ -17,7 +25,7 @@ const Input: React.FC<InputProps> = ({ label, essential = true, hint }) => {
       </S.InputTitleWrapper>
       {hint && <S.InputHint>{hint}</S.InputHint>}
       <S.InputWrap>
-        <S.TextInput type="text" />
+        <S.TextInput type="text" value={value} onChange={onChange} />
       </S.InputWrap>
     </S.InputContainer>
   );
