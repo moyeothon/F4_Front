@@ -1,24 +1,36 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 350px;
+interface ContainerProps {
+  $background: string;
+}
+
+export const Container = styled.div<ContainerProps>`
+  width: 100%;
   height: 80px;
   display: flex;
   align-items: center;
   padding: 14px 10px;
   gap: 10px;
   border-radius: 20px;
-  background: #bfd8af;
+  background: ${({ $background }) => ($background ? $background : "#bfd8af")};
 
-  @media (max-width: 360px) {
+  /* @media (max-width: 360px) {
     width: 280px;
-  }
+  } */
 `;
 
 export const Img = styled.img`
   width: 54px;
   height: 54px;
   border-radius: 27px;
+  z-index: 999;
+`;
+
+export const DefaultImg = styled.div`
+  width: 54px;
+  height: 54px;
+  border-radius: 27px;
+  background-color: #adb5bd;
 `;
 
 export const InformWrap = styled.div`

@@ -22,6 +22,8 @@ export const Input = styled.input`
   border-radius: 8px;
   border: 1px solid #ced4da;
   padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
 `;
 
 export const TextArea = styled.textarea`
