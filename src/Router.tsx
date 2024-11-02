@@ -8,6 +8,7 @@ import Personal from "@pages/personal/Personal";
 import Result from "@pages/result/Result";
 import Confirm from "@pages/confirm/Confirm";
 import Main from "@pages/main/Main";
+import Share from "@pages/share/Share";
 
 const Router: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const Router: React.FC = () => {
         <Route path="/personal" element={<Personal />} />
         <Route path="/result" element={<Result />} />
         <Route path="/confirm" element={<Confirm />} />
+        <Route path="/share" element={<Share />} />
       </Routes>
     </BrowserRouter>
   );
