@@ -3,8 +3,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const Btn = styled.button`
-  width: 350px;
+interface ButtonProps {
+  link: string; // 링크를 위한 prop
+  name: string; // 버튼의 텍스트를 위한 prop
+  type?: "button" | "submit"; // 기본 버튼 타입
+  $width?: string; // 버튼의 넓이
+}
+
+const Btn = styled.button<ButtonProps>`
+  width: ${({ $width }) => ($width ? $width : "350px")};
   height: 60px;
   display: flex;
   justify-content: center;
@@ -12,10 +19,7 @@ const Btn = styled.button`
   color: #343a40;
   text-align: center;
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 20px;
-  letter-spacing: -0.5px;
   border-radius: 10px;
   background: #99bc85;
   cursor: pointer;
@@ -27,19 +31,26 @@ const Btn = styled.button`
   }
 `;
 
-interface ButtonProps {
-  link: string;
-  name: string;
-  type?: string;
-}
-
-const Button: React.FC<ButtonProps> = ({ link, name, type }) => {
+const Button: React.FC<ButtonProps> = ({
+  link,
+  name,
+  type = "button",
+  $width,
+}) => {
   const handleClick = () => {
-    window.location.href = link;
+    if (link) {
+      window.location.href = link;
+    }
   };
 
   return (
-    <Btn type="button" onClick={handleClick}>
+    <Btn
+      name={name}
+      link={link}
+      type={type}
+      onClick={handleClick}
+      $width={$width}
+    >
       {name}
     </Btn>
   );
