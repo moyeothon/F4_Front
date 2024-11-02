@@ -6,6 +6,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "@components/common/button/Button";
 import { instance } from "@apis/instance";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   height: calc(100vh - 80px);
@@ -28,6 +29,7 @@ const ButtonLayout = styled.div`
 `;
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
   const handleNameChange = (data: string) => {
     localStorage.setItem("name", data);
   };
@@ -45,6 +47,7 @@ const Login: React.FC = () => {
           }
         );
         localStorage.setItem("profile_id", response.data.profile_id);
+        navigate(`/invite/${teamID}/${localStorage.getItem("member_count")}`);
       } catch (err) {
         console.log(err);
       }
@@ -73,7 +76,7 @@ const Login: React.FC = () => {
         <Button
           onClick={postData}
           type="submit"
-          link={`/invite/${teamID}/${localStorage.getItem("member_count")}`}
+          // link={}
           name="팀 참가하기"
         />
       </ButtonLayout>

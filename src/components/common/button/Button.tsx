@@ -41,10 +41,11 @@ const Button: React.FC<ButtonProps> = ({
   const navigate = useNavigate();
   const handleClick = () => {
     if (onClick) {
-      onClick(); // onClick이 존재하면 호출
-    }
-    if (link) {
-      navigate(link);
+      onClick();
+    } else {
+      if (link) {
+        navigate(link);
+      }
     }
   };
 
