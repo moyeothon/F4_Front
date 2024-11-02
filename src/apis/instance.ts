@@ -1,12 +1,11 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 const axiosConfig: AxiosRequestConfig = {
-  baseURL: "",
+  baseURL: "https://port-0-f4-back-m30e9x2h74f3a212.sel4.cloudtype.app/",
   withCredentials: false,
-  // false를 통해 cross domain request 시 HTTP 인증 및 클라이언트 SSL 인증서 사용 허용
   headers: {
     "Content-Type": "application/json",
   },
 };
 
-export const client = axios.create(axiosConfig);
+export const instance = axios.create(axiosConfig);

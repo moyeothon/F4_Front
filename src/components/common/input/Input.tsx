@@ -4,10 +4,10 @@ import * as S from "./style";
 
 interface InputProps {
   label: string;
-  essential: boolean;
+  essential?: boolean;
   hint: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<InputProps> = ({
