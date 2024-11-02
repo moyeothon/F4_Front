@@ -33,7 +33,7 @@ const Login: React.FC = () => {
   const handleNameChange = (data: string) => {
     localStorage.setItem("name", data);
   };
-  const teamID = localStorage.getItem("team_id");
+  // const teamID = localStorage.getItem("team_id");
   const postData = async () => {
     for (let i = 0; i < 2; i++) {
       try {
