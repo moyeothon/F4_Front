@@ -29,7 +29,7 @@ const Share = () => {
           name="김은혜"
           position="팀장"
           part="프론트엔드"
-          imgSrc="https://github.com/gracekim527.png"
+          imgSrc="/images/nemo.png"
           $background="transparent"
           $borderColor="#E1F0DA"
         />
@@ -39,6 +39,7 @@ const Share = () => {
           part="프론트엔드"
           $background="transparent"
           $borderColor="#E1F0DA"
+          imgSrc="/images/sara.png"
         />
         <ActivatedProfile
           name="이석원"
@@ -46,6 +47,7 @@ const Share = () => {
           part="백엔드"
           $background="transparent"
           $borderColor="#E1F0DA"
+          imgSrc="/images/idea.png"
         />
         <ActivatedProfile
           name="김현수"
@@ -53,6 +55,7 @@ const Share = () => {
           part="백엔드"
           $background="transparent"
           $borderColor="#E1F0DA"
+          imgSrc="/images/sir.png"
         />
       </S.ProfileContainer>
     </Container>
