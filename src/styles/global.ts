@@ -22,9 +22,8 @@ i {font-style:normal}
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-
+	align-items: center;
 	min-height: 100vh;
-
 }
 
 // 폰트설정
