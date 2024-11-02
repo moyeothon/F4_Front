@@ -62,9 +62,14 @@ const Invite: React.FC = () => {
           <DeactivatedProfile />
         </ProfileList>
       </Section>
-      <Button link="" name="팀원들과 동기화하기" />
+      <Button link="/result" name="팀원들과 동기화하기" />
     </Container>
   );
+  // TODO - 미등록 프로필 누르면 등록하는 페이지로
+  // TODO - 서버로 받은 UUID로 고유 페이지 생성
+  // TODO - 서버로 부터 등록받은 유저 받아와서 mapping
+  // TODO - 전 인원 미등록 시 disabled
+  // TODO - 전 인원 등록 후 버튼 클릭 시 GPT 관련 API요청
 };
 
 export default Invite;

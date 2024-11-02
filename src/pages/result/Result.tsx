@@ -32,7 +32,7 @@ const Result: React.FC = () => {
         </Wrapper>
       </Wrapper>
 
-      <Button name="다음" link={`/next`} $width="100%" />
+      <Button name="다음" link={`/confirm`} $width="100%" />
     </Container>
   );
 };

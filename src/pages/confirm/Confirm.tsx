@@ -19,9 +19,7 @@ const Confirm: React.FC = () => {
           <InputContainer label="팀명" defaultText="팀명을 적어주세요!" />
           <InputContainer
             label="우리팀만의 규칙"
-            defaultText="1. 매일 데일리 스크럼 진행하기
-2. 본인의 의견 확실하게 밝히기
-3. 시간 나면 온라인 모각코 같이 진행하기"
+            defaultText="1. 규칙을 적어주세요!"
             isTextArea={true}
           />
           <InputContainer
@@ -30,9 +28,10 @@ const Confirm: React.FC = () => {
           />
         </Wrapper>
       </Wrapper>
-      <Button name="동기화 끝내기" link={`/next`} $width="100%" />
+      <Button name="동기화 끝내기" link={`/share`} $width="100%" />
     </Container>
   );
+  // TODO - Post로 최종 결과 등록 후 최종 공유 페이지 이동 로직
 };
 
 export default Confirm;
