@@ -1,9 +1,11 @@
 import Button from "@components/common/button/Button";
 import HintText2 from "@components/common/hintText/HintText2";
-import ActivatedProfile from "@components/invite/profile/ActivatedProfile";
 import DeactivatedProfile from "@components/invite/profile/DeactivatedProfile";
 import UrlCopy from "@components/invite/urlCopy/UrlCopy";
 import styled from "styled-components";
+import { useParams } from "react-router-dom";
+import { instance } from "@apis/instance";
+import { useEffect } from "react";
 
 export const Container = styled.div`
   width: 350px;
@@ -32,6 +34,29 @@ export const ProfileList = styled.div`
 `;
 
 const Invite: React.FC = () => {
+  let { team, count } = useParams();
+  if (team === undefined) {
+    team = "";
+  }
+  if (count === undefined) {
+    count = "1";
+  }
+  localStorage.setItem("team_id", team);
+  localStorage.setItem("member_count", count);
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    try {
+      const response = await instance.get(
+        `/teams/${localStorage.getItem("team_id")}/profiles/`
+      );
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Container>
       <Section>
@@ -49,17 +74,12 @@ const Invite: React.FC = () => {
 프로필 등록을 하지 않으면 다음을 진행할 수 없어요."
         />
         <ProfileList>
-          <ActivatedProfile
-            name="김은혜"
-            position="팀장"
-            part="프론트엔드"
-            imgSrc="https://github.com/gracekim527.png"
-          />
-          <DeactivatedProfile />
-          <DeactivatedProfile />
-          <DeactivatedProfile />
-          <DeactivatedProfile />
-          <DeactivatedProfile />
+          {Array.from(
+            { length: Number(localStorage.getItem("member_count")) },
+            (_, index) => (
+              <DeactivatedProfile key={index} />
+            )
+          )}
         </ProfileList>
       </Section>
       <Button link="/result" name="팀원들과 동기화하기" />

@@ -4,8 +4,14 @@ import * as S from "./style";
 export default function TeamButton() {
   const [count, setCount] = useState(0);
 
-  const increment = () => setCount(count + 1);
-  const decrement = () => setCount(count > 0 ? count - 1 : 0);
+  const increment = () => {
+    localStorage.setItem("member_count", String(count + 1));
+    setCount(count + 1);
+  };
+  const decrement = () => {
+    localStorage.setItem("member_count", String(count - 1));
+    setCount(count > 0 ? count - 1 : 0);
+  };
 
   return (
     <S.Container>

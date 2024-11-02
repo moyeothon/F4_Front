@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as S from "./style";
 
 export default function UrlCopy() {
-  const url = "https://www.syncup.com/234asdf94al4";
-
+  const url = `https://f4-front.vercel.app/invite/${localStorage.getItem(
+    "team_id"
+  )}/${localStorage.getItem("member_count")}`;
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(url);

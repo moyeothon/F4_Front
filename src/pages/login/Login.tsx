@@ -5,6 +5,7 @@ import HintText from "@components/common/hintText/HintText1";
 import React from "react";
 import styled from "styled-components";
 import Button from "@components/common/button/Button";
+import { instance } from "@apis/instance";
 
 const Container = styled.div`
   height: calc(100vh - 80px);
@@ -27,6 +28,27 @@ const ButtonLayout = styled.div`
 `;
 
 const Login: React.FC = () => {
+  const handleNameChange = (data: string) => {
+    localStorage.setItem("name", data);
+  };
+  const postData = async () => {
+    for (let i = 0; i < 2; i++) {
+      try {
+        const response = await instance.post(
+          `/teams/${localStorage.getItem("team_id")}/login/`,
+          {
+            user_name: localStorage.getItem("name"),
+            birth_date: `${localStorage.getItem("year")}-${localStorage.getItem(
+              "month"
+            )}-${localStorage.getItem("day")}`,
+          }
+        );
+        localStorage.setItem("profile_id", response.data.profile_id);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
   return (
     <>
       <Container>
@@ -36,12 +58,25 @@ const Login: React.FC = () => {
           paragraph="팀을 참가할 때 간단한 정보를 입력받아요."
         />
         <InputForm>
-          <Input label="이름" hint="" />
+          <Input
+            label="이름"
+            hint=""
+            onChange={(e) => {
+              handleNameChange(e.target.value);
+            }}
+          />
           <DateInput />
         </InputForm>
       </Container>
       <ButtonLayout>
-        <Button type="submit" link="" name="팀 참가하기" />
+        <Button
+          onClick={postData}
+          type="submit"
+          link={`/invite/${localStorage.getItem(
+            "team_id"
+          )}/${localStorage.getItem("member_count")}`}
+          name="팀 참가하기"
+        />
       </ButtonLayout>
     </>
   );
