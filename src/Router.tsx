@@ -7,12 +7,14 @@ import Invite from "@pages/invite/Invite";
 import Personal from "@pages/personal/Personal";
 import Result from "@pages/result/Result";
 import Confirm from "@pages/confirm/Confirm";
+import Main from "@pages/main/Main";
 import Share from "@pages/share/Share";
 
 const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/create" element={<Create />} />
         <Route path="/test/:page" element={<Test />} />
