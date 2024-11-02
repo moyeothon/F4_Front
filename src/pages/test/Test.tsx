@@ -25,10 +25,7 @@ const Test: React.FC = () => {
 
   // 다음 버튼 클릭 시 선택된 내용 확인
   const handleNext = () => {
-    console.log(
-      `Selected button index for page ${page}:`,
-      selectedContent[page - 1]
-    );
+    console.log(selectedContent[page - 1]);
     // 필요한 추가 로직을 여기에 작성
   };
 
