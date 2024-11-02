@@ -32,7 +32,7 @@ const HintTextP1 = styled.p`
 
 interface TextProps {
   headline: string;
-  paragraph: string;
+  paragraph?: string;
 }
 
 const HintText2: React.FC<TextProps> = ({ headline, paragraph }) => {

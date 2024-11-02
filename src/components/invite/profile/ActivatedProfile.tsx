@@ -6,6 +6,8 @@ interface ProfileProps {
   part: string;
   imgSrc?: string;
   url?: string;
+  $background?: string;
+  $borderColor?: string;
 }
 
 const ActivatedProfile: React.FC<ProfileProps> = ({
@@ -14,6 +16,8 @@ const ActivatedProfile: React.FC<ProfileProps> = ({
   part,
   imgSrc,
   url,
+  $background,
+  $borderColor,
 }) => {
   const handleClick = () => {
     if (url) {
@@ -24,10 +28,18 @@ const ActivatedProfile: React.FC<ProfileProps> = ({
   return (
     <S.Container
       onClick={handleClick}
-      style={{ cursor: url ? "pointer" : "default" }}
+      style={{
+        cursor: url ? "pointer" : "default",
+        border: `1px solid ${$borderColor}`,
+      }}
+      $background={$background || "#bfd8af"}
     >
       <div>
-        <S.Img src={imgSrc} alt={`${name}'s profile`} />
+        {imgSrc ? (
+          <S.Img src={imgSrc} alt={`${name}'s profile`} />
+        ) : (
+          <S.DefaultImg></S.DefaultImg>
+        )}
       </div>
       <S.InformWrap>
         <S.InformDetailWrap>
