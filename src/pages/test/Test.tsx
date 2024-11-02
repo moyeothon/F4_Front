@@ -6,6 +6,7 @@ import { TestButton } from "./_components/button/TestButton";
 import Button from "@components/common/button/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { instance } from "@apis/instance";
 
 const Test: React.FC = () => {
   const { page } = usePageNumber();
@@ -22,10 +23,26 @@ const Test: React.FC = () => {
     setSelectedContent(newContent); // 상태 업데이트
   };
 
+  const postData = async () => {
+    try {
+      await instance.post(
+        `/teams/${localStorage.getItem(
+          "team_id"
+        )}/profiles/${localStorage.getItem("profile_id")}/answers/`,
+        {
+          question_id: page,
+          answer_id: Math.floor(Math.random() * 4) + 1,
+        }
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   // 다음 버튼 클릭 시 선택된 내용 확인
-  const handleNext = () => {
-    navigate(`/test/${page + 1}`);
-    // 필요한 추가 로직을 여기에 작성
+  const handleNext = (path: string) => {
+    postData();
+    navigate(path);
   };
 
   return (
@@ -46,15 +63,24 @@ const Test: React.FC = () => {
       </S.Wrapper>
 
       {page !== 5 ? (
-        <Button name="다음" $width="100%" onClick={handleNext} />
+        <Button
+          name="다음"
+          $width="100%"
+          onClick={() => handleNext(`/test/${page + 1}`)}
+        />
       ) : (
         <Button
           name="완료"
           $width="100%"
-          type="submit"
-          link={`/invite/${localStorage.getItem(
-            "team_id"
-          )}/${localStorage.getItem("member_count")}`}
+          onClick={() =>
+            handleNext(
+              `/invite/${localStorage.getItem(
+                "team_id"
+              )}/${localStorage.getItem("member_count")}/${
+                Number(localStorage.getItem("profile_id")) + 1
+              }`
+            )
+          }
         />
       )}
     </S.TestContainer>

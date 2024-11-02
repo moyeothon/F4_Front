@@ -44,12 +44,12 @@ export interface Profile {
 }
 
 const Invite: React.FC = () => {
-  const { team, count } = useParams();
+  const { team, count, id } = useParams();
   const [profiles, setProfiles] = useState<Profile[]>([]); // 프로필 상태 관리
 
   localStorage.setItem("team_id", team ? team : "test");
   localStorage.setItem("member_count", count ? count : "test");
-
+  localStorage.setItem("profile_id", id ? id : "1");
   useEffect(() => {
     fetchData();
   }, []);
@@ -59,7 +59,8 @@ const Invite: React.FC = () => {
       const response = await instance.get(
         `/teams/${localStorage.getItem("team_id")}/profiles/`
       );
-      setProfiles(response.data.profiles); // 받아온 프로필 데이터를 상태에 저장
+      console.log(response.data);
+      setProfiles(response.data.profiles);
     } catch (err) {
       console.log(err);
     }

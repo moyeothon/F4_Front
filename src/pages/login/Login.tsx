@@ -47,7 +47,12 @@ const Login: React.FC = () => {
           }
         );
         localStorage.setItem("profile_id", response.data.profile_id);
-        navigate(`/invite/${teamID}/${localStorage.getItem("member_count")}`);
+        navigate(
+          "/personal"
+          // `/invite/${teamID}/${localStorage.getItem("member_count")}/${
+          //   Number(localStorage.getItem("profile_id")) + 1
+          // }`
+        );
       } catch (err) {
         console.log(err);
       }

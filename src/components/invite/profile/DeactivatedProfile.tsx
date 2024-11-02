@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function DeactivatedProfile() {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/personal");
+    navigate("/login");
   };
 
   return (
