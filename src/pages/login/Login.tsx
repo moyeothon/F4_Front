@@ -26,6 +26,7 @@ const InputForm = styled.form`
 const ButtonLayout = styled.div`
   position: relative;
   bottom: 10px;
+  width: 95%;
 `;
 
 const Login: React.FC = () => {
@@ -83,6 +84,7 @@ const Login: React.FC = () => {
           type="submit"
           // link={}
           name="팀 참가하기"
+          $width="100%"
         />
       </ButtonLayout>
     </>

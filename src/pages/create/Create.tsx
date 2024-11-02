@@ -16,6 +16,7 @@ const Container = styled.div`
 
 const ButtonLayout = styled.div`
   position: relative;
+  width: 95%;
   bottom: 10px;
 `;
 
