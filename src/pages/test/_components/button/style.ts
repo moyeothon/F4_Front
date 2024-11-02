@@ -1,10 +1,17 @@
 import styled from "styled-components";
+import { TestButtonProps } from "./TestButton";
 
-export const TestButton = styled.button`
+export const TestButton = styled.button<TestButtonProps>`
   border-radius: 15px;
   border: 1px solid #ced4da;
   width: 100%;
-  padding: 3rem 0;
+  padding: 1.5rem 0;
+  background-color: ${({ $isActive }) =>
+    $isActive ? "#b2d1a1" : "transparent"};
+  cursor: pointer;
+  &:hover {
+    background-color: #d4e7c5; // hover 효과
+  }
 `;
 
 export const ButtonText = styled.h1`
