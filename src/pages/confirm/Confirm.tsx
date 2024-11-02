@@ -1,7 +1,7 @@
 import { Container } from "@components/common/container/style";
 import { Wrapper } from "@components/common/wrapper/style";
 import HintText2 from "@components/common/hintText/HintText2";
-import { InputContainer } from "./_components/inputContainer/InputContainer";
+import { InputContainer } from "@components/common/inputContainer/InputContainer";
 import Button from "@components/common/button/Button";
 
 const Confirm: React.FC = () => {

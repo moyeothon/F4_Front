@@ -11,7 +11,7 @@ interface ButtonProps {
 }
 
 const Btn = styled.button<ButtonProps>`
-  width: ${({ $width }) => ($width ? $width : "350px")};
+  width: 100%;
   height: 60px;
   display: flex;
   justify-content: center;

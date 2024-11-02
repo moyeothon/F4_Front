@@ -3,17 +3,19 @@ import React from "react";
 import * as S from "./style";
 
 interface InputProps {
-  width?: string;
   label: string;
   essential: boolean;
   hint: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<InputProps> = ({
-  width = "340px",
   label,
   essential = true,
   hint,
+  value,
+  onChange,
 }) => {
   return (
     <S.InputContainer>
@@ -22,8 +24,8 @@ const Input: React.FC<InputProps> = ({
         {essential && <S.EssentialIcon>*</S.EssentialIcon>}
       </S.InputTitleWrapper>
       {hint && <S.InputHint>{hint}</S.InputHint>}
-      <S.InputWrap width={width}>
-        <S.TextInput type="text" />
+      <S.InputWrap>
+        <S.TextInput type="text" value={value} onChange={onChange} />
       </S.InputWrap>
     </S.InputContainer>
   );

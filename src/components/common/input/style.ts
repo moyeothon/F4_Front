@@ -7,6 +7,7 @@ interface InputWrapProps {
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 10px;
 `;
 
 export const InputTitleWrapper = styled.div`
@@ -46,27 +47,19 @@ export const InputHint = styled.p`
 `;
 
 export const InputWrap = styled.div<InputWrapProps>`
-  width: ${({ width }) => width || "340px"};
+  width: 100%;
   height: 40px;
   border-radius: 8px;
   border: 1px solid #ced4da;
   background: #fff;
-
-  @media (max-width: 360px) {
-    width: 280px;
-  }
 `;
 
 export const DateInputWrap = styled.div`
-  width: 102px;
+  width: 100%;
   height: 40px;
   border-radius: 8px;
   border: 1px solid #ced4da;
   background: #fff;
-
-  @media (max-width: 360px) {
-    width: 82px;
-  }
 `;
 
 export const TextInput = styled.input`
