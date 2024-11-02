@@ -18,16 +18,16 @@ const HintTextHeadline2 = styled.h2`
 `;
 
 const HintTextP1 = styled.p`
-  width: 300px;
+  /* width: 300px; */
   color: #868e96;
   font-family: "Pretendard";
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-
   @media (max-width: 360px) {
     width: 280px;
   }
+  white-space: pre-line;
 `;
 
 interface TextProps {

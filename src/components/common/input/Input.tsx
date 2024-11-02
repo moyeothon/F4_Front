@@ -3,18 +3,12 @@ import React from "react";
 import * as S from "./style";
 
 interface InputProps {
-  width?: string;
   label: string;
   essential: boolean;
   hint: string;
 }
 
-const Input: React.FC<InputProps> = ({
-  width = "340px",
-  label,
-  essential = true,
-  hint,
-}) => {
+const Input: React.FC<InputProps> = ({ label, essential = true, hint }) => {
   return (
     <S.InputContainer>
       <S.InputTitleWrapper>
@@ -22,7 +16,7 @@ const Input: React.FC<InputProps> = ({
         {essential && <S.EssentialIcon>*</S.EssentialIcon>}
       </S.InputTitleWrapper>
       {hint && <S.InputHint>{hint}</S.InputHint>}
-      <S.InputWrap width={width}>
+      <S.InputWrap>
         <S.TextInput type="text" />
       </S.InputWrap>
     </S.InputContainer>

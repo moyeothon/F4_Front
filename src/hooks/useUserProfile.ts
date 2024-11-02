@@ -14,7 +14,7 @@ export const useUserProfile = () => {
       );
       setResponse(response);
     } catch (err) {
-      // console.log(error);
+      setError("박세호");
     }
   };
   useEffect(() => {

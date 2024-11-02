@@ -1,17 +1,17 @@
-// Button.tsx
-
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 interface ButtonProps {
-  link: string; // 링크를 위한 prop
+  link?: string; // 링크를 위한 prop
   name: string; // 버튼의 텍스트를 위한 prop
   type?: "button" | "submit"; // 기본 버튼 타입
   $width?: string; // 버튼의 넓이
+  onClick?: () => void; // 클릭 핸들러
 }
 
 const Btn = styled.button<ButtonProps>`
-  width: ${({ $width }) => ($width ? $width : "350px")};
+  width: 100%;
   height: 60px;
   display: flex;
   justify-content: center;
@@ -36,17 +36,22 @@ const Button: React.FC<ButtonProps> = ({
   name,
   type = "button",
   $width,
+  onClick,
 }) => {
+  const navigate = useNavigate();
   const handleClick = () => {
+    if (onClick) {
+      onClick(); // onClick이 존재하면 호출
+    }
     if (link) {
-      window.location.href = link;
+      navigate(link);
     }
   };
 
   return (
     <Btn
-      name={name}
       link={link}
+      name={name}
       type={type}
       onClick={handleClick}
       $width={$width}

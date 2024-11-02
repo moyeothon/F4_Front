@@ -71,7 +71,7 @@ export const DeactivatedContainer = styled.div`
   border: 2px dashed #dee2e6;
   background: #fff;
   padding: 18px;
-
+  cursor: pointer;
   @media (max-width: 360px) {
     width: 280px;
   }

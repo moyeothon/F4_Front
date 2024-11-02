@@ -30,7 +30,7 @@ const Create: React.FC = () => {
       </Container>
 
       <ButtonLayout>
-        <Button type="submit" link="" name="팀 동기화 시작하기" />
+        <Button type="submit" link="/invite" name="팀 동기화 시작하기" />
       </ButtonLayout>
     </>
   );

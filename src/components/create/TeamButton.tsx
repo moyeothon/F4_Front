@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import * as S from "./style";
 
 export default function TeamButton() {
@@ -10,10 +10,25 @@ export default function TeamButton() {
   return (
     <S.Container>
       <S.Button onClick={decrement} disabled={count === 0}>
-        -
+        <span
+          style={{
+            paddingBottom: "0.25rem",
+          }}
+        >
+          -
+        </span>
       </S.Button>
       <S.PersonNum>{count} 명</S.PersonNum>
-      <S.Button onClick={increment}>+</S.Button>
+      <S.Button onClick={increment}>
+        <span
+          style={{
+            paddingBottom: "0.25rem",
+            paddingLeft: "0.05rem",
+          }}
+        >
+          +
+        </span>
+      </S.Button>
     </S.Container>
   );
 }

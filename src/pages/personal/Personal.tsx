@@ -10,15 +10,10 @@ import Button from "@components/common/button/Button";
 import ImgInput from "@components/personal/ImgInput";
 import { useState } from "react";
 import styled from "styled-components";
-
-const Container = styled.div`
-  margin: 40px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-`;
+import { Container } from "@components/common/container/style";
 
 const InputForm = styled.form`
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -29,8 +24,8 @@ const parts = [
   { value: "2", label: "디자인" },
   { value: "3", label: "백엔드" },
   { value: "4", label: "웹 프론트엔드" },
-  { value: "4", label: "AI" },
-  { value: "4", label: "앱" },
+  { value: "5", label: "AI" },
+  { value: "6", label: "앱" },
 ];
 
 const radio1 = [

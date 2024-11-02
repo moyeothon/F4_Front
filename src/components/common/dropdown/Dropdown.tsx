@@ -60,7 +60,7 @@ const TitleWrapper = styled.div`
 `;
 
 const SelectBox = styled.select`
-  width: 340px;
+  width: 100%;
   height: 40px;
   border-radius: 8px;
   border: 1px solid #ced4da;

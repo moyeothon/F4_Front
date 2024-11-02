@@ -61,6 +61,7 @@ const Container = styled.div`
 const RadioGroupContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 30px;
 `;
 
 const Label = styled.label<LabelProps>`
@@ -73,7 +74,7 @@ const Label = styled.label<LabelProps>`
   font-weight: 500;
   line-height: 12px; /* 100% */
   letter-spacing: -0.1px;
-  width: 160px;
+  width: 100%;
   height: 40px;
   border-radius: 8px;
   border: 1px solid #ced4da;
