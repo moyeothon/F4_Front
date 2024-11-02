@@ -16,22 +16,27 @@ const Confirm: React.FC = () => {
           />
         </Wrapper>
         <Wrapper>
-          <InputContainer label="팀명" defaultText="팀명을 적어주세요!" />
+          <InputContainer
+            label="팀명"
+            defaultText="팀명을 적어주세요!"
+            localStorageKey="team_name" // 로컬 스토리지 키 넘기기
+          />
           <InputContainer
             label="우리팀만의 규칙"
             defaultText="1. 규칙을 적어주세요!"
             isTextArea={true}
+            localStorageKey="team_rules" // 로컬 스토리지 키 넘기기
           />
           <InputContainer
             label="우리팀의 목표"
             defaultText="팀 목표를 적어주세요!"
+            localStorageKey="team_goal" // 로컬 스토리지 키 넘기기
           />
         </Wrapper>
       </Wrapper>
       <Button name="동기화 끝내기" link={`/share`} $width="100%" />
     </Container>
   );
-  // TODO - Post로 최종 결과 등록 후 최종 공유 페이지 이동 로직
 };
 
 export default Confirm;

@@ -5,7 +5,9 @@ import * as S from "./style";
 export default function UrlCopy() {
   const url = `https://f4-front.vercel.app/invite/${localStorage.getItem(
     "team_id"
-  )}/${localStorage.getItem("member_count")}`;
+  )}/${localStorage.getItem("member_count")}/${localStorage.getItem(
+    "profile_id"
+  )}`;
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(url);

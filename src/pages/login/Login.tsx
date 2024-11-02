@@ -26,6 +26,7 @@ const InputForm = styled.form`
 const ButtonLayout = styled.div`
   position: relative;
   bottom: 10px;
+  width: 95%;
 `;
 
 const Login: React.FC = () => {
@@ -33,7 +34,7 @@ const Login: React.FC = () => {
   const handleNameChange = (data: string) => {
     localStorage.setItem("name", data);
   };
-  const teamID = localStorage.getItem("team_id");
+  // const teamID = localStorage.getItem("team_id");
   const postData = async () => {
     for (let i = 0; i < 2; i++) {
       try {
@@ -47,7 +48,12 @@ const Login: React.FC = () => {
           }
         );
         localStorage.setItem("profile_id", response.data.profile_id);
-        navigate(`/invite/${teamID}/${localStorage.getItem("member_count")}`);
+        navigate(
+          "/personal"
+          // `/invite/${teamID}/${localStorage.getItem("member_count")}/${
+          //   Number(localStorage.getItem("profile_id")) + 1
+          // }`
+        );
       } catch (err) {
         console.log(err);
       }
@@ -78,6 +84,7 @@ const Login: React.FC = () => {
           type="submit"
           // link={}
           name="팀 참가하기"
+          $width="100%"
         />
       </ButtonLayout>
     </>
