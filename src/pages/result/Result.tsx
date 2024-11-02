@@ -1,4 +1,5 @@
-import * as S from "./style";
+import { Container } from "@components/common/container/style";
+import { Wrapper } from "@components/common/wrapper/style";
 import HintText2 from "@components/common/hintText/HintText2";
 import { ResultCard } from "./_components/ResultCard";
 import Button from "@components/common/button/Button";
@@ -15,24 +16,24 @@ const SECOND_MOCK_TEXT: string[] = [
 
 const Result: React.FC = () => {
   return (
-    <S.Container>
-      <S.ContentWrapper>
+    <Container>
+      <Wrapper>
         <HintText2
           headline="AI가 분석한 팀의 성향입니다."
           paragraph="각 팀원들이 답변한 내용을 토대로 팀의 성향을 진단해줘요.
         우리 팀 성향이 맞는지 확인해보고, 팀원들과 상의해볼까요?"
         />
-        <S.ContentWrapper>
+        <Wrapper>
           <ResultCard
-            title="AI가 진단한 F4 팀의 성향 요약"
+            title="AI가 진단한 팀의 성향 요약"
             contents={FIRST_MOCK_TEXT}
           />
-          <ResultCard title="F4 팀 방향성 조언" contents={SECOND_MOCK_TEXT} />
-        </S.ContentWrapper>
-      </S.ContentWrapper>
+          <ResultCard title="팀 방향성 조언" contents={SECOND_MOCK_TEXT} />
+        </Wrapper>
+      </Wrapper>
 
       <Button name="다음" link={`/next`} $width="100%" />
-    </S.Container>
+    </Container>
   );
 };
 
