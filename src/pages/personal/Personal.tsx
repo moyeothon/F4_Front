@@ -1,7 +1,7 @@
 // Personal.tsx
 
 import React, { useState } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import Dropdown from "@components/common/dropdown/Dropdown";
 import HintText from "@components/common/hintText/HintText2";
 import DateInput from "@components/common/input/DateInput";
@@ -98,6 +98,7 @@ const Personal: React.FC = () => {
           },
         }
       );
+      console.log(response);
     } catch (error) {
       console.error(error);
     }

@@ -7,8 +7,6 @@ import Button from "@components/common/button/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BUTTONS_PER_PAGE = 4; // 페이지당 버튼 수
-
 const Test: React.FC = () => {
   const { page } = usePageNumber();
   const navigate = useNavigate();
@@ -29,10 +27,6 @@ const Test: React.FC = () => {
     navigate(`/test/${page + 1}`);
     // 필요한 추가 로직을 여기에 작성
   };
-
-  // 현재 페이지에 해당하는 버튼 인덱스 계산
-  const startIndex = (page - 1) * BUTTONS_PER_PAGE;
-  const endIndex = startIndex + BUTTONS_PER_PAGE;
 
   return (
     <S.TestContainer>
