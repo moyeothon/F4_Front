@@ -1,8 +1,10 @@
 import * as S from "./style";
+import { useNavigate } from "react-router-dom";
 
 export default function DeactivatedProfile() {
+  const navigate = useNavigate();
   const handleClick = () => {
-    window.location.href = "#";
+    navigate("/personal");
   };
 
   return (

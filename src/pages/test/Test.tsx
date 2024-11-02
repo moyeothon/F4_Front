@@ -64,10 +64,13 @@ const Test: React.FC = () => {
           onClick={() => {
             console.log("최종 선택된 내용:", selectedContent); // 최종 선택된 버튼의 인덱스 출력
           }}
+          link="/invite"
         />
       )}
     </S.TestContainer>
   );
+  // TODO - 25개 데이터 가지고 있기
+  // TODO - mapping해서 서버에 등록해주기
 };
 
 export default Test;
