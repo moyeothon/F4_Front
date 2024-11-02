@@ -34,15 +34,10 @@ export const ProfileList = styled.div`
 `;
 
 const Invite: React.FC = () => {
-  let { team, count } = useParams();
-  if (team === undefined) {
-    team = "";
-  }
-  if (count === undefined) {
-    count = "1";
-  }
-  localStorage.setItem("team_id", team);
-  localStorage.setItem("member_count", count);
+  const { team, count } = useParams();
+
+  localStorage.setItem("team_id", team ? team : "test");
+  localStorage.setItem("member_count", count ? count : "test");
   useEffect(() => {
     fetchData();
   }, []);

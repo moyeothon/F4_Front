@@ -31,6 +31,7 @@ const Login: React.FC = () => {
   const handleNameChange = (data: string) => {
     localStorage.setItem("name", data);
   };
+  const teamID = localStorage.getItem("team_id");
   const postData = async () => {
     for (let i = 0; i < 2; i++) {
       try {
@@ -72,9 +73,7 @@ const Login: React.FC = () => {
         <Button
           onClick={postData}
           type="submit"
-          link={`/invite/${localStorage.getItem(
-            "team_id"
-          )}/${localStorage.getItem("member_count")}`}
+          link={`/invite/${teamID}/${localStorage.getItem("member_count")}`}
           name="팀 참가하기"
         />
       </ButtonLayout>
