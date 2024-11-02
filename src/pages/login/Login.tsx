@@ -1,10 +1,10 @@
 // Login.tsx
-import Input from "@components/input/Input";
-import DateInput from "@components/input/DateInput";
-import HintText from "@components/hintText/HintText1";
+import Input from "@components/common/input/Input";
+import DateInput from "@components/common/input/DateInput";
+import HintText from "@components/common/hintText/HintText1";
 import React from "react";
 import styled from "styled-components";
-import Button from "@components/button/Button";
+import Button from "@components/common/button/Button";
 
 const Container = styled.div`
   height: calc(100vh - 80px);
