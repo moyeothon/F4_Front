@@ -26,7 +26,7 @@ const Btn = styled.button<ButtonProps>`
   border: none;
   margin: 10px auto;
 
-  @media (max-width: 360px) {
+  @media (max-width: 380px) {
     width: 280px;
   }
 `;
