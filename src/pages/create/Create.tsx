@@ -3,6 +3,7 @@ import Button from "@components/common/button/Button";
 import HintText from "@components/common/hintText/HintText1";
 import TeamButton from "@components/create/TeamButton";
 import { instance } from "@apis/instance";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   height: calc(100vh - 80px);
@@ -19,12 +20,14 @@ const ButtonLayout = styled.div`
 `;
 
 const Create: React.FC = () => {
+  const navigate = useNavigate();
   const postData = async () => {
     try {
       const response = await instance.post("/teams/", {
         member_count: localStorage.getItem("member_count"),
       });
       localStorage.setItem("team_id", response.data.team_id);
+      navigate("/login");
     } catch (err) {
       console.log(err);
     }
@@ -41,12 +44,7 @@ const Create: React.FC = () => {
       </Container>
 
       <ButtonLayout>
-        <Button
-          onClick={postData}
-          type="submit"
-          link="/login"
-          name="팀 동기화 시작하기"
-        />
+        <Button onClick={postData} type="submit" name="팀 동기화 시작하기" />
       </ButtonLayout>
     </>
   );
